@@ -1,2 +1,2 @@
 ftrack-python-api
-openassetio
+openassetio==1.0.0a14
