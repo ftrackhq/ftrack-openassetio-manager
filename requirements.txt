@@ -1,1 +1,2 @@
 ftrack-python-api
+openassetio
