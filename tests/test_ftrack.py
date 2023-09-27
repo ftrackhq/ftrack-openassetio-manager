@@ -1,4 +1,6 @@
 # Copyright 2022 The Foundry Visionmongers Ltd
+# Copyright 2023 ftrack AB
+
 # SPDX-License-Identifier: Apache-2.0
 """
 Test cases for the ftrack manager plugin that make use of the OpenAssetIO

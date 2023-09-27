@@ -1,4 +1,6 @@
 # Copyright 2022 The Foundry Visionmongers Ltd
+# Copyright 2023 ftrack AB
+
 # SPDX-License-Identifier: Apache-2.0
 """
 An OpenAssetIO ManagerPlugin that binds ftrack to the API.

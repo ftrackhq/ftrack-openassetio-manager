@@ -9,7 +9,7 @@ A skeleton OpenAssetIO ManagerPlugin that binds ftrack to the API
 ## Getting started
 
 To use the plugin in an OpenAssetIO host, set (or append) the
-`OPENASSETIO_PLUGIN_PATH` env var to include the `python` directory in
+`OPENASSETIO_PLUGIN_PATH` env var to include the `plugin` directory in
 this checkout.
 
 It requires the `ftrack-python-api` package to be installed.
