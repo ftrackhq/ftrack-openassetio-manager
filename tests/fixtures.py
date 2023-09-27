@@ -1,4 +1,6 @@
 # Copyright 2022 The Foundry Visionmongers Ltd
+# Copyright 2023 ftrack AB
+
 # SPDX-License-Identifier: Apache-2.0
 """
 Manager test harness test case fixtures for the ftrack manager plugin.
