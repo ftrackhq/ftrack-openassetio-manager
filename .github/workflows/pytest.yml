@@ -14,14 +14,6 @@ jobs:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11" ]
     runs-on: ubuntu-latest
     container: python:${{ matrix.python-version }}
-    services:
-      ftrack:
-        image: ftrackdocker/test-server:latest
-        credentials:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
-        ports:
-          - 80:80
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
@@ -32,6 +24,6 @@ jobs:
         run: | 
           pytest
         env:
-          FTRACK_SERVER: http://ftrack:80
+          FTRACK_SERVER: ${{ secrets.FTRACK_SERVER }}
           FTRACK_API_USER: ${{ secrets.FTRACK_API_USER }}
-          FTRACK_API_KEY: ${{ secrets.FTRACK_API_KEY_UNITTEST }}
+          FTRACK_API_KEY: ${{ secrets.FTRACK_API_KEY }}
