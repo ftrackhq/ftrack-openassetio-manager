@@ -40,4 +40,4 @@ class FtrackManagerPlugin(PythonPluginSystemManagerPlugin):
 # level, holding a class derived from PythonPluginSystemManagerPlugin.
 
 # pylint: disable=invalid-name
-plugin = FtrackManagerPlugin
+openassetioPlugin = FtrackManagerPlugin
