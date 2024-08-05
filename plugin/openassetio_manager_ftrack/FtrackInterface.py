@@ -24,6 +24,16 @@ SETTINGS_KEY_API_USER = "api_user"
 
 class FtrackInterface(ManagerInterface):
 
+    def hasCapability(self, capability):
+        if capability in (
+            ManagerInterface.Capability.kEntityReferenceIdentification,
+            ManagerInterface.Capability.kManagementPolicyQueries,
+            ManagerInterface.Capability.kEntityTraitIntrospection
+        ):
+            return True
+
+        return False
+    
     def __init__(self):
         super().__init__()
         self.__settings = {}
