@@ -28,7 +28,7 @@ class FtrackInterface(ManagerInterface):
         if capability in (
             ManagerInterface.Capability.kEntityReferenceIdentification,
             ManagerInterface.Capability.kManagementPolicyQueries,
-            ManagerInterface.Capability.kEntityTraitIntrospection
+            ManagerInterface.Capability.kEntityTraitIntrospection,
         ):
             return True
 
