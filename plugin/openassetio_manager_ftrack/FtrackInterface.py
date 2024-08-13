@@ -15,7 +15,6 @@ from openassetio.managerApi import ManagerInterface
 # pylint: disable=missing-docstring
 # pylint: disable=too-many-arguments,unused-argument,invalid-name
 
-REFERENCE_PREFIX = "ftrack://"
 
 SETTINGS_KEY_SERVER = "server_url"
 SETTINGS_KEY_API_KEY = "api_key"
@@ -24,16 +23,8 @@ SETTINGS_KEY_API_USER = "api_user"
 
 class FtrackInterface(ManagerInterface):
 
-    def hasCapability(self, capability):
-        if capability in (
-            ManagerInterface.Capability.kEntityReferenceIdentification,
-            ManagerInterface.Capability.kManagementPolicyQueries,
-            ManagerInterface.Capability.kEntityTraitIntrospection,
-        ):
-            return True
+    REFERENCE_PREFIX = "ftrack://"
 
-        return False
-    
     def __init__(self):
         super().__init__()
         self.__settings = {}
@@ -53,7 +44,7 @@ class FtrackInterface(ManagerInterface):
         # As we use a simple prefix, allow the OpenAssetIO C++ layer to
         # short-circuit calls into Python for isEntityReferenceString
         # where possible.
-        info = {constants.kInfoKey_EntityReferencesMatchPrefix: REFERENCE_PREFIX}
+        info = {constants.kInfoKey_EntityReferencesMatchPrefix: self.REFERENCE_PREFIX}
         # Add any relevant server info if we have a session.
         if self.__session:
             if "version" in self.__session.server_information:
@@ -76,7 +67,20 @@ class FtrackInterface(ManagerInterface):
         return [TraitsData() for _ in traitSets]
 
     def isEntityReferenceString(self, someString, hostSession):
-        return someString.startswith(self.__reference_prefix)
+        return someString.startswith(self.REFERENCE_PREFIX)
+
+    def hasCapability(self, capability):
+        if capability in (
+                ManagerInterface.Capability.kEntityReferenceIdentification,
+                ManagerInterface.Capability.kManagementPolicyQueries,
+                ManagerInterface.Capability.kEntityTraitIntrospection,
+
+                ManagerInterface.Capability.kExistenceQueries,
+                ManagerInterface.Capability.kResolution
+        ):
+            return True
+
+        return False
 
     @staticmethod
     def __validate_settings(managerSettings):

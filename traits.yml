@@ -22,8 +22,11 @@ traits:
           active:
             type: boolean
             description: whether the project is active.
+          id:
+            type: string
+            description: unique identifier.
 
-      Context:
+      TypedContext :
         description: Context traits.
         usage:
           - entity
@@ -34,18 +37,10 @@ traits:
           name:
             type: string
             description: Name of the context.
+          id:
+            type: string
+            description: unique identifier.
 
-      Task:
-        description: Task traits.
-        usage:
-          - entity
-        properties:
-          type:
-            type: string
-            description: Type of the context.
-          name:
-            type: string
-            description: Name of the context.
 
       AssetVersion:
         description: AssetVersion traits.
@@ -58,6 +53,9 @@ traits:
           latest:
             type: boolean
             description: Whether the version is the latest published.
+          id:
+            type: string
+            description: unique identifier.
 
       Location:
         description: Location traits.
@@ -67,15 +65,24 @@ traits:
           name:
             type: string
             description: name of the location.
+          id:
+            type: string
+            description: unique identifier.
 
       Component:
         description: Component traits.
         usage:
           - entity
         properties:
+          anme:
+            type: string
+            description: name of the component.
           url:
             type: string
             description: url of the component.
           filePath:
             type: string
             description: path of the component.
+          id:
+            type: string
+            description: unique identifier.
