@@ -1,0 +1,81 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/OpenAssetIO/OpenAssetIO-TraitGen/main/python/openassetio_traitgen/schema.json
+# yamllint disable-line rule:document-start
+package: ftrack
+
+description: Traits and Specifications used in ftrack
+traits:
+  core:
+    description: Core traits.
+    members:
+
+      Project:
+        description: Project traits.
+        usage:
+          - entity
+        properties:
+          name:
+            type: string
+            description: Name of the project.
+          code:
+            type: string
+            description: Code of the project.
+          active:
+            type: boolean
+            description: whether the project is active.
+
+      Context:
+        description: Context traits.
+        usage:
+          - entity
+        properties:
+          type:
+            type: string
+            description: Type of the context.
+          name:
+            type: string
+            description: Name of the context.
+
+      Task:
+        description: Task traits.
+        usage:
+          - entity
+        properties:
+          type:
+            type: string
+            description: Type of the context.
+          name:
+            type: string
+            description: Name of the context.
+
+      AssetVersion:
+        description: AssetVersion traits.
+        usage:
+          - entity
+        properties:
+          version:
+            type: integer
+            description: Version of the entity.
+          latest:
+            type: boolean
+            description: Whether the version is the latest published.
+
+      Location:
+        description: Location traits.
+        usage:
+          - entity
+        properties:
+          name:
+            type: string
+            description: name of the location.
+
+      Component:
+        description: Component traits.
+        usage:
+          - entity
+        properties:
+          url:
+            type: string
+            description: url of the component.
+          filePath:
+            type: string
+            description: path of the component.

@@ -1,2 +1,3 @@
 ftrack-python-api
 openassetio==1.0.0b2.post2
+openassetio-mediacreation
