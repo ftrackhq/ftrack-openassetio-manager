@@ -46,3 +46,11 @@ export FTRACK_API_KEY=<a valid key>
 export FTRACK_API_USER=<a valid user>
 pytest
 ```
+
+
+## Traits
+Traits can be generated with : 
+
+```bash
+openassetio-traitgen .\traits.yml -o .\plugin\ -g python
+```
