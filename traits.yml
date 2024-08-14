@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/OpenAssetIO/OpenAssetIO-TraitGen/main/python/openassetio_traitgen/schema.json
 # yamllint disable-line rule:document-start
-package: ftrack
+package: ftrack_traits
 
 description: Traits and Specifications used in ftrack
 traits:
