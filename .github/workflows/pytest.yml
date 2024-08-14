@@ -20,6 +20,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r tests/requirements.txt
+
+      - name: Build ftrack Traits
+        run: openassetio-traitgen .\traits.yml -o .\plugin\ -g python
+
       - name: Run pytest
         run: | 
           pytest
